@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Edit Book</title>
+</head>
+<body>
+	<main>
+		<h1>Edit a Book</h1>
+
+		<form method="post" action="">
+			<div>
+				<label for="title">{{ book.title if book.title else "Book title" }}</label>
+				<input type="text" id="title" name="title" placeholder="Book title" required>
+			</div>
+
+			<div>
+				<label for="description">{{ book.description if book.description else "Book description" }}</label>
+				<textarea id="description" name="description" placeholder="Book description" rows="5"></textarea>
+			</div>
+
+			<div>
+				<label for="author">{{ book.author if book.author else "Author name" }}</label>
+				<input type="text" id="author" name="author" placeholder="Author name" required>
+			</div>
+
+			<button type="submit">Submit</button>
+			<button type="button" onclick="history.back()">Back</button>
+			<button type="button" onclick="alert('Edit functionality coming soon.')">Edit</button>
+		</form>
+	</main>
+</body>
+</html>

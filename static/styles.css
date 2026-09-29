@@ -1,0 +1,93 @@
+:root {
+  color-scheme: light;
+  font-family: system-ui, sans-serif;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  color: #1f2937;
+  background: #f8fafc;
+}
+header {
+  padding: 2rem 1rem;
+  color: white;
+  background: #5c6a8a;
+}
+.container {
+  width: min(1100px, calc(100% - 2rem));
+  margin: auto;
+}
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+nav a {
+  color: white;
+  text-decoration: none;
+}
+.hero {
+  padding: 3rem 0 2rem;
+}
+.hero h1 {
+  margin: 0 0 0.5rem;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+}
+.hero p {
+  margin: 0;
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+main {
+  padding: 2rem 0 4rem;
+}
+.section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.section-heading h2 {
+  margin: 0;
+}
+.button {
+  display: inline-block;
+  padding: 0.65rem 1rem;
+  border: 0;
+  border-radius: 0.5rem;
+  color: white;
+  background: #7494da;
+  text-decoration: none;
+  cursor: pointer;
+}
+.books {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.book {
+  padding: 1.25rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.75rem;
+  background: white;
+  box-shadow: 0 2px 8px #0000000d;
+}
+.book h3 {
+  margin: 0 0 0.4rem;
+}
+.book p {
+  margin: 0.35rem 0;
+  color: #64748b;
+}
+.empty {
+  padding: 2rem;
+  border: 1px dashed #cbd5e1;
+  border-radius: 0.75rem;
+  color: #64748b;
+  text-align: center;
+  background: white;
+}

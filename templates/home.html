@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Bookshelf</title>
+	<link rel="stylesheet" href="{{ url_for('static', path='styles.css') }}">
+</head>
+<body>
+	<header>
+		<div class="container">
+			<nav>
+				<a href="{{ url_for('home') }}"><strong>📚 Bookshelf</strong></a>
+			</nav>
+			<div class="hero">
+				<h1>Your personal bookshelf</h1>
+				<p style="font-style: italic; color: rgb(226, 225, 225); font-size: 18px">{{ quote.text }}</p>
+				<p style="font-style: italic; color: rgb(212, 211, 211); font-size: 14px">{{ quote.text_pl }}</p>
+			</div>
+		</div>
+	</header>
+
+	<main class="container">
+		<div class="section-heading">
+			<h2>Featured books</h2>
+			<a class="button" href="{{ url_for('books') }}">View all</a>
+		</div>
+		{% if books %}
+		<section class="books" aria-label="Featured books">
+			{% for book in books %}
+			<article class="book">
+                <h3>{{ book.title }}</h3>
+				<img src="{{ url_for('static', path='book.jpg') }}" alt="Book cover" width="64px" />
+				{% if book.author %}<p>by {{ book.author }}</p>{% endif %}
+				{% if book.description %}<p>{{ book.description }}</p>{% endif %}
+				<a href="{{ url_for('get_book', book_id=book.id) }}">View details</a>
+			</article>
+			{% endfor %}
+		</section>
+		{% else %}
+		<div class="empty">No books available yet. Check back soon!</div>
+		{% endif %}
+	</main>
+</body>
+</html>
